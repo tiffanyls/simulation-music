@@ -1,0 +1,16 @@
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #100B0D;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.logo {
+    height: 50%;
+    width: 30%;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #5BC8B7;
+}
