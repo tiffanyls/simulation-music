@@ -1,0 +1,1 @@
+INSERT INTO songs (song, artist, album) VALUES($1, $2, $3) RETURNING *;

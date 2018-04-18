@@ -2,8 +2,5 @@
     font-family: 'Open Sans', sans-serif;
     color: #5BC8B7;
     margin-top: 10%;
-}
-
-section+p{
-    
+    float: left;
 }
