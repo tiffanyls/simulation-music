@@ -44,6 +44,11 @@ passport.deserializeUser((user,done )=>{
     done(null,user);
 })
 
+app.post('/api/addsong', (req,res, next) => {
+    const {song, artist, album} = req.body;
+    app.get('db').
+} )
+
 app.listen(port, () => {
     console.log(`Listening on port: ${port}`);
 })
