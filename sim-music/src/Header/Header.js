@@ -8,7 +8,7 @@ class Header extends Component{
         return(
             <header>
                 <div><img src={Songster} className='logo' alt='Songster Logo'/></div>
-                <h2> all playlists </h2> <h2> this playlist: 5 songs </h2>
+                <h2> all playlists </h2><br /> <h2> this playlist: 5 songs </h2>
             </header>
         )
     }

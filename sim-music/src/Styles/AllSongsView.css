@@ -1,0 +1,9 @@
+.all-body{
+    background-image: url('allsongs.jpg');
+    background-size: cover;
+    overflow: hidden;
+    position: fixed;
+    left: 0px;
+    height: 102%;
+    width: 102%;
+}

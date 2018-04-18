@@ -8,9 +8,13 @@ header {
 .logo {
     height: 50%;
     width: 30%;
+    margin-top: 15px;
 }
 
 h2 {
     font-family: 'Open Sans', sans-serif;
     color: #5BC8B7;
+    float: right;
+    margin-right: 20px;
+    margin-top: -5%;
 }
