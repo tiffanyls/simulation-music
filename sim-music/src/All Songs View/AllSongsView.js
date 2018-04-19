@@ -10,8 +10,13 @@ class AllSongsView extends Component{
         this.state ={
             songs: []
         };
+        
     }
-
+    componentDidMount(){
+        axios.get('/api/getSongs').then(response => {
+            console.log(response, "hello")
+            this.setState({songs: response.data});
+        })
     }
     render(){
         return( <div><div> <Header /></div>
@@ -22,7 +27,7 @@ class AllSongsView extends Component{
             <div className='boxmodel'>This is the content of the box. </div> 
             <a href="http://agirlandherpassport.com">A Girl and Her Passport</a>
             {/* <audio controls><source src='horse.mp3' type="audio/mpeg" /></audio> */}
-            {this.state.songs}
+            <div>{this.state.songs}</div>
         </div>
         </div>
         )}

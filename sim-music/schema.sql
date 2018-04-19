@@ -1,4 +1,4 @@
-CREATE TABLE "public"."Songs" (
+CREATE TABLE "public"."songs" (
     "id" serial,
     "Song" varchar(50),
     "Artist" varchar(50),

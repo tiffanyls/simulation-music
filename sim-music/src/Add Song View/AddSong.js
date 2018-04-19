@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
-import {addSong} from '../../src/ducks/reducer';
+import axios from 'axios';
+import { addSong } from '../ducks/reducer';
 import Header from '../Header/Header';
 import '../Styles/AddSong.css';
 
@@ -26,11 +26,11 @@ handleChange(e){
     });
 }
 submitForm(e){
-    axios.post('/api/addsong', {song: this.state.song, artist: this.state.artist, album: this.state.album})
+    axios.post('/api/addSong', {song: this.state.song, artist: this.state.artist, album: this.state.album})
     .then(response =>{
     })
     }
-}
+
 
 render(){
     return( <div>
@@ -53,5 +53,5 @@ render(){
     )
 }
 }
-
-export default AddSong;
+const mapStateToProps = state => state;
+export default connect(mapStateToProps, {AddSong});

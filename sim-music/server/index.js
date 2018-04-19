@@ -44,9 +44,21 @@ passport.deserializeUser((user,done )=>{
     done(null,user);
 })
 
-app.post('/api/addsong', (req,res, next) => {
+app.get('/api/getSongs', (req, res, next) => {
+    console.log(req.body,"here");
+    const {songs} = req.body;
+    app.get('db').getSongs()
+    .then(response =>{
+        res.status(200).json(response);
+    })
+    .catch(err => {             
+        res.status(500).json(err);
+    })
+})
+
+app.post('/api/addSong', (req,res, next) => {
     const {song, artist, album} = req.body;
-    app.get('db').addSong([song, artist, album])
+    app.get('db').getSongs([song, artist, album])
     .then(resoonse =>{
         res.status(200).json(response);
     })
