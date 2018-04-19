@@ -8,6 +8,28 @@ import '../Styles/AddSong.css';
 class AddSong extends Component {
     constructor(){
     super();
+    this.state={
+        song:'',
+        artist: '',
+        album:''
+    }
+
+    this.handleChange=this.handleChange.bind(this);
+    this.submitForm=this.submitForm.bind(this);
+}
+
+handleChange(e){
+    this.setState({
+        song: e.target.value,
+        artist: e.target.value,
+        album: e.target.value
+    });
+}
+submitForm(e){
+    axios.post('/api/addsong', {song: this.state.song, artist: this.state.artist, album: this.state.album})
+    .then(response =>{
+    })
+    }
 }
 
 render(){
@@ -19,7 +41,7 @@ render(){
             <input type="text" placeholder="song" onChange={(event) => this.handleChange('song', event)}></input>
             <input type="text" placeholder="artist" onChange={(event) => this.handleChange('artist', event)}></input>
             <input type="text" placeholder="album" onChange={(event) => this.handleChange('album', event)}></input>
-            <button> Add Song </button>
+            <button onClick={this.submitForm}> Add Song </button>
         </section>
         <div className='video'>
         <video width="320" height="240" autoPlay>

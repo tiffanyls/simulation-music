@@ -7,3 +7,23 @@
     height: 102%;
     width: 102%;
 }
+
+div p {
+    background-color: blue;
+}
+
+#child >p{
+    background-color: yellow;
+}
+
+div + h1 {
+    background-color: green;
+}
+
+.boxmodel {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}

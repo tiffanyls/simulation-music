@@ -8,5 +8,6 @@ export default (
     <Switch>
         <Route exact path ='/' component={AllSongsView}/>
         <Route path='/addsong' component={AddSong}/>
+        {/* <Route path='/song/:id' component={AllSongsView}/> */}
     </Switch>
 );
