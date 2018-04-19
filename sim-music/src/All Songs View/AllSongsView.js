@@ -9,7 +9,7 @@ class AllSongsView extends Component{
         super(props);
         this.state ={
             songs: [],
-            listener: ""
+            
         };
         
     }
@@ -26,12 +26,12 @@ class AllSongsView extends Component{
         let allSongs = 
         songs &&
         songs.map((curr,i) =>{
-            console.log(curr.Song)
+            console.log(curr.song)
             return( <div>
                 <p>Id:{curr.id}</p>
-                <p>Song:{curr.Song}</p>
-                <p>Artist:{curr.Artist}</p>
-                <p>Album: {curr.Album}</p>
+                <p>Song:{curr.song}</p>
+                <p>Artist:{curr.artist}</p>
+                <p>Album: {curr.album}</p>
                 </div>
             )
         })
