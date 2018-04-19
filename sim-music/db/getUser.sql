@@ -1,0 +1,1 @@
+SELECT * FROM listener WHERE id=$1;

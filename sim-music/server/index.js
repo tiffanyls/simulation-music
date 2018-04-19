@@ -57,6 +57,10 @@ app.get('/api/getSongs', (req, res, next) => {
     })
 })
 
+app.get('/api/getUser', (req, res, next)=>{
+    
+})
+
 app.post('/api/addSong', (req,res, next) => {
     const {song, artist, album} = req.body;
     app.get('db').getSongs([song, artist, album])

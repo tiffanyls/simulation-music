@@ -8,9 +8,9 @@
     width: 102%;
 }
 
-div p {
+/* div p {
     background-color: blue;
-}
+} */
 
 #child >p{
     background-color: yellow;
