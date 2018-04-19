@@ -49,6 +49,7 @@ app.get('/api/getSongs', (req, res, next) => {
     const {songs} = req.body;
     app.get('db').getSongs()
     .then(response =>{
+        console.log(response)
         res.status(200).json(response);
     })
     .catch(err => {             
