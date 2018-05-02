@@ -9,29 +9,45 @@ class AllSongsView extends Component{
         super(props);
         this.state ={
             songs: [],
+            newObject: {},
             
         };
-        
+        this.handleChange = this.handleChange.bind(this);
     }
     componentDidMount(){
         axios.get('/api/getSongs').then(response => {
             console.log(response, "hello")
             this.setState({songs: response.data});
-        })
-   
-    }
+        })}
+
+        handleChange(stateKey, event){
+            let newObject = Object.assign({}, this.state.songs[this.state.currentItem])
+            newObject[stateKey] = event.target.value;
+            let updatedSongs = [...this.state.songs];
+            updatedSongs[this.state.currentItem] = newObject;
+            this.setState({newObject, songs: updatedSongs })
+        }
+        saveChange(e){
+            axios.put('/api/updateSongs', {updatedInfo: this.state.newObject})}
+        
+            deleteImage(id){
+                axios.delete(`/api/deleteSong/${id.target.value}`).then(res =>{
+                    this.props.refreshPage();
+                })
+            }
+    
     render(){
         const {songs} = this.state;
-        console.log(songs)
         let allSongs = 
         songs &&
         songs.map((curr,i) =>{
-            console.log(curr.song)
             return( <div>
                 <p>Id:{curr.id}</p>
-                <p>Song:{curr.song}</p>
-                <p>Artist:{curr.artist}</p>
-                <p>Album: {curr.album}</p>
+                <p>Song:{curr.song}</p><input value={curr.song} onChange={(event)=> this.handleChange("song", event)}/>
+                <p>Artist:{curr.artist}</p><input value={curr.artist} onChange={(event)=> this.handleChange("artist", event)}/>
+                <p>Album: {curr.album}</p><input value={curr.album} onChange={(event)=> this.handleChange("album", event)}/>
+                <button onClick={()=>this.saveChange(curr.id, i)} className="save">Save</button>
+                <button value={curr.id} onClick={this.deleteSong} className="delete">Delete</button> 
                 </div>
             )
         })
