@@ -81,6 +81,17 @@ app.delete('/api/deleteSong/:id', (req, res, next) =>{
     .catch(err=> {
     res.status(500).json(err);
 });
+
+//Simulation 2 - Student can create a RESTful API(queries - line 9&10)
+app.get('/api/searchAll', (req, res, next)=>{
+    app.get('db').searchAll([req.query.searchSongs])
+    .then(response =>{
+        res.status(200).json(response);
+    })
+    .catch(err=>{
+        res.status(500).json(err);
+    })
+})
 app.get('/api/getUser', (req, res, next)=>{
     
 });
